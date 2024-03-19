@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Home Page</title>
+
+    <!-- Icons font CSS-->
+    <link href="/static/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="/static/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="/static/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="/static/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="/static/css/main.css" rel="stylesheet" media="all">
+    
+</head>
+
+<body>
+    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins main-bg">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+                    <h1 class="title"><b>Car Price App </b></h1>
+                    <p class="desc">This app for predicting car price in 2014 & 2015 .</p>
+                    <br>
+                    <form method="GET" action="/predict">
+                        {%if car_price %}
+                            <p style = 'font-size:20px;text-align:center; color:#FFF'; > Precicted car price is : <span style='color:#a4f773;'><b>{{car_price}}</b></span> USD</p>
+                        {% endif %} 
+                        <br>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label"><b>Year?</b></label>
+                                    <div class="p-t-10">
+                                        <label class="radio-container m-r-45">2014
+                                            <input type="radio" checked="checked" name="year" value="2014">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="radio-container">2015
+                                            <input type="radio" name="year" value="2015">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label class="label"><b>Make</b></label>
+                            <div class="rs-select2 js-select-simple select--no-search">
+                            <select name="make" id="make">
+                                <option value="14">Ford</option>
+                                <option value="7">Chevrolet</option>
+                                <option value="36">Nissan</option>
+                                <option value="50">Toyota</option>
+                                <option value="10">Dodge</option>
+                                <option value="17">Honda</option>
+                                <option value="19">Hyundai</option>
+                                <option value="4">BMW</option>
+                                <option value="24">Kia</option>
+                                <option value="8">Chrysler</option>
+                                <option value="32">Mercedes-Benz</option>
+                                <option value="20">Infiniti</option>
+                                <option value="23">Jeep</option>
+                                <option value="51">Volkswagen</option>
+                                <option value="27">Lexus</option>
+                                <option value="16">GMC</option>
+                                <option value="31">Mazda</option>
+                                <option value="6">Cadillac</option>
+                                <option value="0">Acura</option>
+                                <option value="2">Audi</option>
+                                <option value="28">Lincoln</option>
+                                <option value="47">Subaru</option>
+                                <option value="5">Buick</option>
+                                <option value="41">Ram</option>
+                                <option value="39">Pontiac</option>
+                                <option value="35">Mitsubishi</option>
+                                <option value="52">Volvo</option>
+                                <option value="44">Saturn</option>
+                                <option value="34">Mini</option>
+                                <option value="33">Mercury</option>
+                                <option value="26">Land Rover</option>
+                                <option value="45">Scion</option>
+                                <option value="40">Porsche</option>
+                                <option value="22">Jaguar</option>
+                                <option value="48">Suzuki</option>
+                                <option value="12">Fiat</option>
+                                <option value="18">Hummer</option>
+                                <option value="43">Saab</option>
+                                <option value="46">Smart</option>
+                                <option value="37">Oldsmobile</option>
+                                <option value="21">Isuzu</option>
+                                <option value="30">Maserati</option>
+                                <option value="3">Bentley</option>
+                                <option value="1">Aston Martin</option>
+                                <option value="49">Tesla</option>
+                                <option value="11">Ferrari</option>
+                                <option value="15">Geo</option>
+                                <option value="42">Rolls-Royce</option>
+                                <option value="38">Plymouth</option>
+                                <option value="13">Fisker</option>
+                                <option value="25">Lamborghini</option>
+                                <option value="9">Daewoo</option>
+                                <option value="29">Lotus</option>
+                            </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label class="label"><b>Body</b></label>
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="body" id="body">
+                                    <option value="36">Sedan</option>
+                                    <option value="39">SUV</option>
+                                    <option value="24">Hatchback</option>
+                                    <option value="28">Minivan</option>
+                                    <option value="6">Coupe</option>
+                                    <option value="7">Crew Cab</option>
+                                    <option value="43">Wagon</option>
+                                    <option value="5">Convertible</option>
+                                    <option value="38">Supercrew</option>
+                                    <option value="19">G Sedan</option>
+                                    <option value="37">Supercab</option>
+                                    <option value="34">Regular Cab</option>
+                                    <option value="42">Van</option>
+                                    <option value="16">Extended Cab</option>
+                                    <option value="32">Quad Cab</option>
+                                    <option value="14">E-Series Van</option>
+                                    <option value="18">G Coupe</option>
+                                    <option value="13">Double Cab</option>
+                                    <option value="8">Crewmax Cab</option>
+                                    <option value="25">King Cab</option>
+                                    <option value="17">G Convertible</option>
+                                    <option value="22">Genesis Coupe</option>
+                                    <option value="0">Access Cab</option>
+                                    <option value="26">Koup</option>
+                                    <option value="4">Club Cab</option>
+                                    <option value="9">CTS Coupe</option>
+                                    <option value="27">Mega Cab</option>
+                                    <option value="15">Elantra Coupe</option>
+                                    <option value="29">Promaster Cargo Van</option>
+                                    <option value="1">Beetle Convertible</option>
+                                    <option value="44">Xtracab</option>
+                                    <option value="30">Q60 Convertible</option>
+                                    <option value="41">TSX Sport Wagon</option>
+                                    <option value="31">Q60 Coupe</option>
+                                    <option value="11">CTS-V Coupe</option>
+                                    <option value="20">G37 Convertible</option>
+                                    <option value="40">Transit Van</option>
+                                    <option value="35">Regular-Cab</option>
+                                    <option value="10">CTS Wagon</option>
+                                    <option value="21">G37 Coupe</option>
+                                    <option value="23">Granturismo Convertible</option>
+                                    <option value="3">Cab Plus 4</option>
+                                    <option value="2">Cab Plus</option>
+                                    <option value="12">CTS-V Wagon</option>
+                                    <option value="33">Ram Van</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label"><b>Transmition?</b></label>
+                                    <div class="p-t-10">
+                                        <label class="radio-container m-r-45">automatic
+                                            <input type="radio" checked="checked" name="transmission" value="0">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="radio-container">manual
+                                            <input type="radio" name="transmission" value="1">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label class="label"><b>State</b></label>
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="state" id="state">
+                                    <option value="5">FL</option>
+                                    <option value="3">CA</option>
+                                    <option value="28">PA</option>
+                                    <option value="33">TX</option>
+                                    <option value="6">GA</option>
+                                    <option value="19">NJ</option>
+                                    <option value="8">IL</option>
+                                    <option value="24">OH</option>
+                                    <option value="17">NC</option>
+                                    <option value="32">TN</option>
+                                    <option value="15">MO</option>
+                                    <option value="13">MI</option>
+                                    <option value="35">VA</option>
+                                    <option value="22">NV</option>
+                                    <option value="12">MD</option>
+                                    <option value="37">WI</option>
+                                    <option value="14">MN</option>
+                                    <option value="2">AZ</option>
+                                    <option value="4">CO</option>
+                                    <option value="36">WA</option>
+                                    <option value="11">MA</option>
+                                    <option value="23">NY</option>
+                                    <option value="9">IN</option>
+                                    <option value="31">SC</option>
+                                    <option value="18">NE</option>
+                                    <option value="26">ON</option>
+                                    <option value="29">PR</option>
+                                    <option value="16">MS</option>
+                                    <option value="10">LA</option>
+                                    <option value="34">UT</option>
+                                    <option value="7">HI</option>
+                                    <option value="27">OR</option>
+                                    <option value="30">QC</option>
+                                    <option value="0">AB</option>
+                                    <option value="20">NM</option>
+                                    <option value="25">OK</option>
+                                    <option value="21">NS</option>
+                                    <option value="1">AL</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label"><b>condition</b></label>
+                                    <input class="input--style-4" type="number" name="condition" min=1 max = 49>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label"><b>odometer</b></label>
+                                    <input class="input--style-4" type="number" name="odometer" min = 1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label class="label"><b>Color</b></label>
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="color" id="color">
+                                    <option value="17">White</option>
+                                    <option value="1">Black</option>
+                                    <option value="7">Gray</option>
+                                    <option value="15">Silver</option>
+                                    <option value="2">Blue</option>
+                                    <option value="14">Red</option>
+                                    <option value="6">Gold</option>
+                                    <option value="8">Green</option>
+                                    <option value="0">Beige</option>
+                                    <option value="4">Burgundy</option>
+                                    <option value="3">Brown</option>
+                                    <option value="11">Orange</option>
+                                    <option value="13">Purple</option>
+                                    <option value="10">Off-White</option>
+                                    <option value="18">Yellow</option>
+                                    <option value="5">Charcoal</option>
+                                    <option value="16">Turquoise</option>
+                                    <option value="12">Pink</option>
+                                    <option value="9">Lime</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label class="label"><b>Interior</b></label>
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="interior" id="interior">
+                                    <option value="1">Black</option>
+                                    <option value="6">Gray</option>
+                                    <option value="0">Beige</option>
+                                    <option value="13">Tan</option>
+                                    <option value="3">Brown</option>
+                                    <option value="11">Red</option>
+                                    <option value="12">Silver</option>
+                                    <option value="2">Blue</option>
+                                    <option value="8">Off-White</option>
+                                    <option value="10">Purple</option>
+                                    <option value="5">Gold</option>
+                                    <option value="14">White</option>
+                                    <option value="7">Green</option>
+                                    <option value="4">Burgundy</option>
+                                    <option value="9">Orange</option>
+                                    <option value="15">Yellow</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label class="label"><b>MMR</b></label>
+                            <input class="input--style-4" type="number" name="mmr" min =1>
+                        </div>
+
+        
+                        
+                        <div class="p-t-15">
+                            <button class="btn btn--radius-2 btn--blue" type="submit">Predict car price</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="/static/vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="/static/vendor/select2/select2.min.js"></script>
+    <script src="/static/vendor/datepicker/moment.min.js"></script>
+    <script src="/static/vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="/static/js/global.js"></script>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
+<!-- end document-->
